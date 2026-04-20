@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Joryn's Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Heading: Syne (Modern, Geometric) -->
+  <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
+  <script>
+        // create a new hydra-synth instance
+        var hydra = new Hydra({ detectAudio: false })
+        
+        // x = () => mouse.x/window.width 
+        // y = () => mouse.y/window.height 
+        //()=>0.1 + (y() * 0.02) + (x() * 0.02)
+        osc(8, .2)
+          .kaleid(10)
+          .color(0.6, 0.2)
+          .colorama(0.05)
+          .modulateRotate(o0, () => Math.sin(time))
+          .modulate(o0, 0.5)
+          .scale(.3)
+          .posterize(9)
+          .contrast(1)
+          .kaleid(2)
+        .out(o0);
+  </script>
+  <div class="hero">
+    <header>
+      <h1 class="heading">Joryn</h1>
+      <!-- <sub>This is my portfolio</sub> -->
+    </header>
+    <div id="heroContent">
+      <div class="glass">
+        <p>Multimedia Design student; interested in web development, video production, programming, and graphic design.</p>
+      </div>
+      <div class="glass" id="heroNavLinks">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="wrapper">
+    <main>
+      <section id="projects">
+        <h2>Projects</h2>
+        <div id="projectGallery"></div>
+      </section>
+      <section id="about">
+        <div class="aboutGapper"></div>
+        <div id="aboutContent">
+          <h2>About</h2>
+          <p>Hi, I'm Joryn.</p>
+          <h3>Educational Journey</h3>
+          <p>I studied for three semesters at Algonquin College, taking courses in their Interactive Media Design program. Nearing the end of my diploma, I decided I wanted to get a degree in Information Technology. After being accepted into the BIT Interactive Multimedia Design program, I transitioned my studies to Carleton University.</p>
+          <h3>Extra-curricular</h3>
+          <p>While studying at Carleton University, I have connected with the community through student organisations and volunteer positions, including:</p>
+          <ul>
+            <li>
+              <img src="./img/andDesign.jpg" alt="and design logo">
+              <div class="exCurrHead">
+                <h4><a href="https://cuanddesign.ca/" target="_blank">&Design</a></h4>
+                <div class="posCtnr">
+                  <p class="pill">First Year Rep</p>
+                  <p class="pill">V-P Publications</p>
+                </div>
+              </div>
+              <p class="exCurrDesc">This society represents all design majors in Carleton's Faculty of Engineering and Design. In my first year, I was elected the BIT First Year Representative. During that time I helped increase first year BIT involvement in &Design, and hosted multiple events. For my second year I was elected Vice-President Publications. I look forward to begin my publications responsibilities in fall of 2026.</p>
+            </li>
+            <li>
+              <img src="./img/bitSoc.png" alt="bitSoc logo">
+              <div class="exCurrHead">
+                <h4><a href="https://bitsoc.ca/" target="_blank">BITSoc</a></h4>
+                <div class="posCtnr">
+                  <p class="pill">IMD Representative</p>
+                </div>
+              </div>
+              <p class="exCurrDesc">The BIT Society represents each stream in Carleton's Bachelor of Information Technology. For my second year, I have been elected the IMD Representative. I will be advocating for my program and its members, as well as helping other IMD students understand the program and engage with their peers.</p>
+            </li>
+            <li>
+              <img src="./img/caas.png" alt="caas logo" id="caasLogo">
+              <div class="exCurrHead">
+                <h4><a href="https://anti-ai.neocities.org/" target="_blank">Carleton Anti AI Society</a></h4>
+                <div class="posCtnr">
+                  <p class="pill">Founder</p>
+                  <p class="pill">President</p>
+                </div>
+              </div>
+              <p class="exCurrDesc">In my first year, I founded the Carleton Anti AI Society to stand against the use of generative AI at Carleton University. I will be serving as president starting in the fall of 2026, with responsibilities such as: leading other CAAS executives, hiring directors, and planning society actions and events.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="aboutGapper"></div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+      </section>
+    </main>
+  </div>
+  <button onclick="topFunction()" id="topBtn" title="Go to top">⏶</button>
+  <div id="footFix"></div>
+</body>
+<script src="./main.js"></script>
+</html>
