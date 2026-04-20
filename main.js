@@ -9,8 +9,10 @@ let scroll = 0;
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     $topBtn.style.opacity = 1;
+    $topBtn.style.cursor = 'pointer';
   } else {
     $topBtn.style.opacity = 0;
+    $topBtn.style.cursor = 'default';
   }
 }
 $topBtn.addEventListener('mouseenter', ()=>{

@@ -215,11 +215,11 @@ main section p{
   backdrop-filter: blur(10px);
   color: var(--black);
   line-height: 1;
-  cursor: pointer;
   padding: 1rem; 
   border-radius: 1rem; 
   font-size: 30px;
   transition: opacity 200ms ease, backdrop-filter 200ms ease, color 200ms ease;
+  cursor: default;
 }
 
 #topBtn:hover {
