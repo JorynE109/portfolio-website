@@ -1,0 +1,20 @@
+{
+    "photography":
+    [
+        {
+            "title": "Synesthesia",
+            "coverSrc": "./img/project/synesthesia/cover.png"
+        },
+        {
+            "title": "Capital",
+            "coverSrc": "./img/project/capital/cover.png"
+        }
+    ],
+    "video":
+    [
+        {
+            "title": "The Climb",
+            "coverSrc": "./img/project/the-climb/cover.png"
+        }
+    ]
+}
