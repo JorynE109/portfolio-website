@@ -20,7 +20,7 @@ window.addEventListener('load',()=>{
 async function fetchItems()
 {
     try{
-        const res = await fetch('../project/list.json');
+        const res = await fetch('./project/list.json');
         data = await res.json();
         if(res.ok) items = data;
         console.log(items);
