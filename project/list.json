@@ -3,18 +3,93 @@
     [
         {
             "title": "Synesthesia",
-            "coverSrc": "./img/project/synesthesia/cover.png"
+            "mainSrc": "./img/project/synesthesia/main.png",
+            "coverSrc": "./img/project/synesthesia/cover.png",
+            "alt": "person looking left with shadow image faintly showing above",
+            "desc": "This is a description of the project.",
+            "path": "./project/synesthesia/",
+            "resp": ["Photographer", "Editor"],
+            "ratio": 3.2,
+            "cat": "photography",
+            "date": "2026-1-1",
+            "grid-col": 12,
+            "grid-row": 1
         },
         {
             "title": "Capital",
-            "coverSrc": "./img/project/capital/cover.png"
+            "mainSrc": "./img/project/capital/main.png",
+            "coverSrc": "./img/project/capital/cover.png",
+            "alt": "stairs going up in an underpast",
+            "desc": "This is a description of the project.",
+            "path": "./project/capital/",
+            "resp": ["Photographer", "Editor"],
+            "ratio": 3.2,
+            "cat": "photography",
+            "date": "2025-1-20",
+            "grid-col": 12,
+            "grid-row": 1
         }
     ],
     "video":
     [
         {
             "title": "The Climb",
-            "coverSrc": "./img/project/the-climb/cover.png"
+            "mainSrc": "./img/project/the-climb/main.png",
+            "coverSrc": "./img/project/the-climb/cover.png",
+            "alt": "person on a sunny day looking up and to the right",
+            "desc": "This is a description of the project.",
+            "path": "./project/the-climb/",
+            "resp": ["Director", "Actor", "Editor"],
+            "ratio": 3.2,
+            "cat": "video",
+            "date": "2026-1-3",
+            "grid-col": 12,
+            "grid-row": 1
+        }
+    ],
+    "web":
+    [
+        {
+            "title": "web Proj Demo",
+            "mainSrc": "./img/project/demos/1x1.jpg",
+            "coverSrc": "./img/project/demos/1x1.jpg",
+            "alt": "test image 1x1 ratio",
+            "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
+            "path": "./project/demo/",
+            "resp": ["N/A"],
+            "ratio": 1.1,
+            "cat": "web",
+            "date": "2026-1-4",
+            "grid-col": 12,
+            "grid-row": 1
+        },
+        {
+            "title": "web Proj Demo 2",
+            "mainSrc": "./img/project/demos/3x4.jpg",
+            "coverSrc": "./img/project/demos/3x4.jpg",
+            "alt": "test image 1x1 ratio",
+            "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
+            "path": "./project/demo/",
+            "resp": ["N/A"],
+            "ratio": 3.4,
+            "cat": "web",
+            "date": "2026-1-5",
+            "grid-col": 12,
+            "grid-row": 1
+        },
+        {
+            "title": "web Proj Demo 2",
+            "mainSrc": "./img/project/demos/3x2.jpg",
+            "coverSrc": "./img/project/demos/3x2.jpg",
+            "alt": "test image 1x1 ratio",
+            "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
+            "path": "./project/demo/",
+            "resp": ["N/A"],
+            "ratio": 3.2,
+            "cat": "web",
+            "date": "2026-1-6",
+            "grid-col": 12,
+            "grid-row": 1
         }
     ]
 }

@@ -56,6 +56,13 @@
     <main>
       <section id="projects">
         <h2>Projects</h2>
+          <div class="categorySelectionHolder">
+              <button onclick="catSelected(-1)" class="categorySelection" data-category="all">All</button>
+              <button onclick="catSelected(0)" class="categorySelection" data-category="photos">Photos</button>
+              <button onclick="catSelected(1)" class="categorySelection" data-category="video">Video</button>
+              <button onclick="catSelected(2)" class="categorySelection" data-category="web">web</button>
+              <!-- <button onclick="catSelected('multimedia')" class="categorySelection" data-category="multimedia">Multimedia</button> -->
+          </div>
         <div id="projectGallery"></div>
       </section>
       <section id="about">
