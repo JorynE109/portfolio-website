@@ -98,7 +98,7 @@ main section{
   width: 100vw;
   min-height: 120vh;
   background-color: var(--white);
-  padding: 3rem;
+  padding: 3rem 0.5rem;
   font-size: 24px;
   line-height: 1.5;
 }
@@ -124,6 +124,10 @@ main section p{
   background-color: #00000052;
   backdrop-filter: blur(10px);
   padding: 2rem;
+}
+#aboutWrapper{
+  max-width: 1200px;
+  margin: auto;
 }
 #about h3{
   text-align: end;
@@ -180,6 +184,7 @@ main section p{
   white-space: nowrap;
   text-wrap: nowrap;
   padding: 0 1rem;
+  width: fit-content;
 }
 #about ul li img#caasLogo{
   border-radius: 0;
@@ -193,13 +198,16 @@ main section p{
   display: none;
 }
 #footFix.show{
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   position: fixed;
   bottom: 0;
   width: 100vw;
   height: 200px;
   z-index: 1;
-  background-color: var(--white);
+  background-color: var(--red);
+  color: var(--white);
 }
 /* BACK TO TOP */
 #topBtn {
@@ -247,6 +255,13 @@ img{
   position: relative;
   overflow: hidden;
 }
+#projects{
+  font-size: 1em;
+}
+#projects .category{
+  font-style: italic;
+  font-size: 0.8em;
+}
 .proj .projTxt{
   display: flex;
   flex-direction: column;
@@ -267,9 +282,146 @@ img{
 .cover-image{
   display: none;
 }
+#allProjectsHeader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#highlightProj{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-bottom: double 3px var(--black);
+  min-height: 100vh;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#highlightProj img{
+  object-fit: contain;
+}
+.featProj{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.featProj .projTxt{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.categorySelectionHolder{
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.categorySelectionHolder button{
+  display: block;
+  padding: 0.5rem;
+  width: 100px;
+  text-transform: uppercase;
+  font-weight: 800;
+  background-color: var(--red);
+  border: solid 2px var(--red);
+  color: var(--white);
+}
 
-
+.btn-3d{
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: 800;
+  width: fit-content;
+  height: fit-content;
+  color: var(--white);
+  background: rgba(136, 106, 156, 0.801);
+  text-transform: uppercase;
+}
+.btn-3d span:not(:nth-child(1))
+{
+  display: none;
+}
+.btn-3d:hover {
+  color: var(--white);
+  background: rgba(114, 85, 133, 0.934);
+}
+#contact{
+  margin-bottom: 6rem;
+}
+#contactWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 0;
+}
+#contactIntro{
+  display: flex;
+  flex-direction: column;
+}
+#contactIntro sub{
+  line-height: 1;
+  font-size: 0.8em;
+  font-style: italic;
+}
+#contactMain{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-left: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  gap: 1em;
+}
+#contactMain>div{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  line-height: 1;
+}
+#phone h4{
+  font-size: 2.8em;
+  line-height: 0.6;
+}
+#phone>:nth-child(2){
+  font-style: italic;
+}
+#phone>:nth-child(3){
+  font-size: 1.78em;
+}
+#email h4{
+  font-size: 2.8em;
+  line-height: 0.6;
+}
+#email>:nth-child(2){
+  font-size: 1.4em;
+}
+#email>:nth-child(3){
+  font-size: 1.1em;
+  font-style: italic;
+}
+#contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer{
+  font-size: 0.8em;
+  background-color: var(--red);
+  padding: 1rem;
+  color: var(--white);
+}
 @media screen and (min-width: 850px){
+  main section{
+    padding: 0;
+  }
   #about ul{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -352,6 +504,39 @@ img{
     object-fit: cover;
     transition: opacity 200ms ease;
   }
+  .img-holder{
+    position: relative;
+  }
+  .featProj{
+    flex-direction: row-reverse;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  .featProj>*{
+    flex-grow: 1;
+  }
+  .featProj img{
+    max-height: 70vh;
+  }
+  .featProj .projTxt{
+    align-items: end;
+    width: fit-content;
+    max-width: 50%;
+    min-width: 0;
+  }
+  .featProj .projTxt .description{
+    text-align: right;
+    max-width: 80%;
+  }
+  .featProj .cover-image{
+    left: 0;
+    width: fit-content;
+    display: none;
+  }
+  .featProj:hover .cover-image{
+    opacity: 0;
+  }
   /* GRID */
   .grid-col-12{
     grid-column: span 12;
@@ -377,6 +562,82 @@ img{
   .grid-row-2{
     grid-row: span 2;
   }
+  .btn-3d{
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-weight: 800;
+  width: fit-content;
+  width: 150px;
+  height: 50px;
+}
+.btn-3d {
+  position: relative;
+  transition: 1s;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg);
+}
+.btn-3d:hover {
+  transform: perspective(1000px) rotateX(360deg);
+}
+.btn-3d span{
+  padding: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background: rgba(136, 106, 156, 0.801);
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 2px;
+  transition: 0.5s;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  box-shadow: insert 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+.btn-3d:hover span {
+  color: var(--white);
+  background: rgba(114, 85, 133, 0.934);
+}
+.btn-3d span:nth-child(1) {
+  display: flex;
+  transform: rotateX(360deg) translateZ(25px);
+}
+.btn-3d span:nth-child(2) {
+  display: flex;
+  transform: rotateX(270deg) translateZ(25px);
+}
+.btn-3d span:nth-child(3) {
+  display: flex;
+  transform: rotateX(180deg) translateZ(25px);
+}
+.btn-3d span:nth-child(4) {
+  display: flex;
+  transform: rotateX(90deg) translateZ(25px);
+}
+h2:not(#about h2){
+  padding: 3rem;
+}
+#contactWrapper{
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 3rem;
+  flex-grow: 1;
+}
+#allProjectsWrapper{
+  padding: 3rem;
+  padding-top: 0;
+}
+#highlightProj{
+  padding: 3rem;
+}
 }
 @media screen and (min-width: 1100px){
   #about ul{

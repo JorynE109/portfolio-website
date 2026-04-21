@@ -12,8 +12,7 @@ let allImageRatios = {
     "3.2":1,
     "3.4": 2
 }
-let imageRatioCount = [0, 0, 0]
-
+let imageRatioCount = [0, 0, 0];
 window.addEventListener('load',()=>{
     fetchItems();
 });
@@ -27,7 +26,44 @@ async function fetchItems()
     }catch(err){
         $projectGallery.innerHTML = `<p>Unable to load. Try again later. <br><br>${err}</p>`
     }
-        updateGallery();
+    updateHighlight();
+    updateGallery();
+}
+function updateHighlight()
+{
+    const $highlightDisp = document.getElementById('highlightProj');
+    let featItems = [];
+    projCats.forEach(cat => {
+        items[cat].forEach(item =>{
+            if (item.feature > 0)
+            {
+                featItems.push(item);
+            }
+        })
+    })
+
+    let item = featItems[(new Date().getDate()) % featItems.length];
+    $highlightDisp.innerHTML = `
+        <h3>Featured Project</h3>
+        <div class="featProj">
+            <div class="img-holder">
+                <img src="${item.mainSrc}" alt="${item.alt}">
+                <img class="cover-image" src="${item.coverSrc}" alt="${item.alt}">
+            </div>
+            <div class="projTxt">
+                <h4>${item.title}</h4>
+                <div class="resp">${getResp(item.resp)}</div>
+                <p class="category">${item.cat}</p>
+                <p class="description">${item.desc}</p>
+                <a class="btn-3d" href="${item.path}" target"_self">
+                    <span>More</span>
+                    <span>More</span>
+                    <span>More</span>
+                    <span>More</span>
+                </a>
+            </div>
+        </div>
+        `
 }
 function updateGallery()
 {
@@ -202,9 +238,9 @@ function sortObjArrByDate(array)
     {
         for (let i = 1; i < array.length; i++)
         {
-            console.log(array[i].date)
-            console.log(new Date(array[i].date))
-            console.log(new Date(array[i].date).getTime())
+            // console.log(array[i].date)
+            // console.log(new Date(array[i].date))
+            // console.log(new Date(array[i].date).getTime())
             if (new Date(array[i].date).getTime() > new Date(array[i - 1].date).getTime())
             {
                 let buffer = array[i - 1];
@@ -229,7 +265,7 @@ function projHTML(sortedItems)
             <a href="${item.path}" target"_self"><img src="${item.mainSrc}" alt="${item.alt}">
             <img class="cover-image" src="${item.coverSrc}" alt="${item.alt}">
             <div class="projTxt">
-                <h3>${item.title}</h3>
+                <h4>${item.title}</h4>
                 <p class="category">${item.cat}</p>
                 <div class="resp">${getResp(item.resp)}</div>
                 <p class="description">${getDesc(item.desc)}</p>

@@ -12,7 +12,6 @@
 </head>
 
 <body>
-  <!-- Heading: Syne (Modern, Geometric) -->
   <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
   <script>
         // create a new hydra-synth instance
@@ -56,68 +55,99 @@
     <main>
       <section id="projects">
         <h2>Projects</h2>
-          <div class="categorySelectionHolder">
-              <button onclick="catSelected(-1)" class="categorySelection" data-category="all">All</button>
-              <button onclick="catSelected(0)" class="categorySelection" data-category="photos">Photos</button>
-              <button onclick="catSelected(1)" class="categorySelection" data-category="video">Video</button>
-              <button onclick="catSelected(2)" class="categorySelection" data-category="web">web</button>
-              <!-- <button onclick="catSelected('multimedia')" class="categorySelection" data-category="multimedia">Multimedia</button> -->
+        <div id="highlightProj"></div>
+        <div id="allProjectsWrapper">
+          <div id="allProjectsHeader">
+            <h3>All Projects</h3>
+            <div class="categorySelectionHolder">
+                <button onclick="catSelected(-1)" class="categorySelection" data-category="all">All</button>
+                <button onclick="catSelected(0)" class="categorySelection" data-category="photos">Photos</button>
+                <button onclick="catSelected(1)" class="categorySelection" data-category="video">Video</button>
+                <button onclick="catSelected(2)" class="categorySelection" data-category="web">web</button>
+                <!-- <button onclick="catSelected('multimedia')" class="categorySelection" data-category="multimedia">Multimedia</button> -->
+            </div>
           </div>
-        <div id="projectGallery"></div>
+          <div id="projectGallery"></div>
+        </div>
       </section>
       <section id="about">
         <div class="aboutGapper"></div>
         <div id="aboutContent">
-          <h2>About</h2>
-          <p>Hi, I'm Joryn.</p>
-          <h3>Educational Journey</h3>
-          <p>I studied for three semesters at Algonquin College, taking courses in their Interactive Media Design program. Nearing the end of my diploma, I decided I wanted to get a degree in Information Technology. After being accepted into the BIT Interactive Multimedia Design program, I transitioned my studies to Carleton University.</p>
-          <h3>Extra-curricular</h3>
-          <p>While studying at Carleton University, I have connected with the community through student organisations and volunteer positions, including:</p>
-          <ul>
-            <li>
-              <img src="./img/andDesign.jpg" alt="and design logo">
-              <div class="exCurrHead">
-                <h4><a href="https://cuanddesign.ca/" target="_blank">&Design</a></h4>
-                <div class="posCtnr">
-                  <p class="pill">First Year Rep</p>
-                  <p class="pill">V-P Publications</p>
+          <div id="aboutWrapper">
+            <h2>About</h2>
+            <p>Hi, I'm Joryn.</p>
+            <h3>Educational Journey</h3>
+            <p>I studied for three semesters at Algonquin College, taking courses in their Interactive Media Design program. Nearing the end of my diploma, I decided I wanted to get a degree in Information Technology. After being accepted into the BIT Interactive Multimedia Design program, I transitioned my studies to Carleton University.</p>
+            <h3>Extra-curricular</h3>
+            <p>While studying at Carleton University, I have connected with the community through student organisations and volunteer positions, including:</p>
+            <ul>
+              <li>
+                <img src="./img/andDesign.jpg" alt="and design logo">
+                <div class="exCurrHead">
+                  <h4><a href="https://cuanddesign.ca/" target="_blank">&Design</a></h4>
+                  <div class="posCtnr">
+                    <p class="pill">First Year Rep</p>
+                    <p class="pill">V-P Publications</p>
+                  </div>
                 </div>
-              </div>
-              <p class="exCurrDesc">This society represents all design majors in Carleton's Faculty of Engineering and Design. In my first year, I was elected the BIT First Year Representative. During that time I helped increase first year BIT involvement in &Design, and hosted multiple events. For my second year I was elected Vice-President Publications. I look forward to begin my publications responsibilities in fall of 2026.</p>
-            </li>
-            <li>
-              <img src="./img/bitSoc.png" alt="bitSoc logo">
-              <div class="exCurrHead">
-                <h4><a href="https://bitsoc.ca/" target="_blank">BITSoc</a></h4>
-                <div class="posCtnr">
-                  <p class="pill">IMD Representative</p>
+                <p class="exCurrDesc">This society represents all design majors in Carleton's Faculty of Engineering and Design. In my first year, I was elected the BIT First Year Representative. During that time I helped increase first year BIT involvement in &Design, and hosted multiple events. For my second year I was elected Vice-President Publications. I look forward to begin my publications responsibilities in fall of 2026.</p>
+              </li>
+              <li>
+                <img src="./img/bitSoc.png" alt="bitSoc logo">
+                <div class="exCurrHead">
+                  <h4><a href="https://bitsoc.ca/" target="_blank">BITSoc</a></h4>
+                  <div class="posCtnr">
+                    <p class="pill">IMD Representative</p>
+                  </div>
                 </div>
-              </div>
-              <p class="exCurrDesc">The BIT Society represents each stream in Carleton's Bachelor of Information Technology. For my second year, I have been elected the IMD Representative. I will be advocating for my program and its members, as well as helping other IMD students understand the program and engage with their peers.</p>
-            </li>
-            <li>
-              <img src="./img/caas.png" alt="caas logo" id="caasLogo">
-              <div class="exCurrHead">
-                <h4><a href="https://anti-ai.neocities.org/" target="_blank">Carleton Anti AI Society</a></h4>
-                <div class="posCtnr">
-                  <p class="pill">Founder</p>
-                  <p class="pill">President</p>
+                <p class="exCurrDesc">The BIT Society represents each stream in Carleton's Bachelor of Information Technology. For my second year, I have been elected the IMD Representative. I will be advocating for my program and its members, as well as helping other IMD students understand the program and engage with their peers.</p>
+              </li>
+              <li>
+                <img src="./img/caas.png" alt="caas logo" id="caasLogo">
+                <div class="exCurrHead">
+                  <h4><a href="https://anti-ai.neocities.org/" target="_blank">Carleton Anti AI Society</a></h4>
+                  <div class="posCtnr">
+                    <p class="pill">Founder</p>
+                    <p class="pill">President</p>
+                  </div>
                 </div>
-              </div>
-              <p class="exCurrDesc">In my first year, I founded the Carleton Anti AI Society to stand against the use of generative AI at Carleton University. I will be serving as president starting in the fall of 2026, with responsibilities such as: leading other CAAS executives, hiring directors, and planning society actions and events.</p>
-            </li>
-          </ul>
+                <p class="exCurrDesc">In my first year, I founded the Carleton Anti AI Society to stand against the use of generative AI at Carleton University. I will be serving as president starting in the fall of 2026, with responsibilities such as: leading other CAAS executives, hiring directors, and planning society actions and events.</p>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="aboutGapper"></div>
       </section>
       <section id="contact">
         <h2>Contact</h2>
+        <div id="contactWrapper">
+          <div id="contactIntro">
+            <h3>My Info</h3>
+            <sub>(Obscured, for spam resistance)</sub>
+          </div>
+          <div id="contactMain">
+            <div id="phone">
+              <h4>Phone</h4>
+              <p>Area Code: 613</p>
+              <p>200-6953</p>
+            </div>
+            <div id="email">
+              <h4>Email</h4>
+              <p>jorynerwin</p>
+              <p><span>(at)</span>gmail.com</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   </div>
   <button onclick="topFunction()" id="topBtn" title="Go to top">⏶</button>
-  <div id="footFix"></div>
+  <div id="footFix">
+      <footer>
+        <p>Created in 2026 by Joryn Erwin</p>
+        <p>This site was coded using no generative AI</p>
+      </footer>
+    </div>
 </body>
 <script src="./js/main.js"></script>
 <script src="./js/projects.js"></script>
