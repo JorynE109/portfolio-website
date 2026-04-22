@@ -34,6 +34,16 @@
           .kaleid(2)
         .out(o0);
   </script>
+  <div id="modalWrapper" class="hidden">
+    <div id="accModal">
+      <button id="modalClose">&times;</button>
+      <h1>Disclaimer</h1>
+      <p>
+        This website uses bright, dynamic colours, and some flashing lighting may occur. Close to accept, or:
+      </p>
+      <a href="./accessible/">Turn on accessibility mode</a>
+    </div>
+  </div>
   <div class="hero">
     <header>
       <h1 class="heading">Joryn</h1>
@@ -190,14 +200,15 @@
   </div>
   <button onclick="topFunction()" id="topBtn" title="Go to top">⏶</button>
   <div id="footFix">
-      <footer>
-        <p>Created in 2026 by Joryn Erwin</p>
-        <p>This site was coded using no generative AI</p>
-      </footer>
-    </div>
+    <footer>
+      <p>Created in 2026 by Joryn Erwin</p>
+      <p>This site was coded using no generative AI</p>
+    </footer>
+  </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/joshjs@1.0.0/dist/josh.min.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/projects.js"></script>
 <script src="./js/anim-fav.js"></script>
+<script src="./js/modal.js"></script>
 </html>

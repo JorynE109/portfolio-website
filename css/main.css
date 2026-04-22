@@ -394,7 +394,48 @@ hr{
   border: solid 2px var(--red);
   color: var(--white);
 }
-
+#modalWrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(40px) saturate(0%) brightness(2) contrast(0.2);
+  z-index: 999;
+  transition: opacity 200ms ease-in-out;
+}
+#accModal{
+  background-color: var(--white);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 50%;
+}
+button#modalClose{
+  align-self: flex-end;
+  width: fit-content;
+  font-size: 1em;
+  padding: 0.3em;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+}
+#accModal a{
+  color: var(--red);
+}
+.hidden{
+  display: none !important;
+}
 .btn-3d{
   display: block;
   padding: 0.5em 1em;
