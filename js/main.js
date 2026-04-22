@@ -6,6 +6,11 @@ let contact = document.getElementById('contact').scrollHeight;
 let $topBtn = document.getElementById("topBtn");
 
 let scroll = 0;
+
+const josh = new Josh({
+    
+    animateInMobile: false
+});
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
     $topBtn.style.opacity = 1;
@@ -27,6 +32,13 @@ function topFunction()
 {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  console.log(document.URL)
+  console.log(document.URL.split("#"))
+  let docURL = document.URL.split("#")
+  if (docURL.length > 1)
+  {
+    history.pushState("","", docURL[0]);
+  }
 } 
 
 function setScrollSettings()
