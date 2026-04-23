@@ -1,0 +1,105 @@
+:root{
+    --pink: #f65f9f;
+    --orange: #ff999d;
+    --blue: #4c9ed6;
+    --bg-purp: #9875b7;
+}
+#wrapper{
+    position: relative;
+    z-index: 3;
+    /* max-width: 1000px;
+    margin: auto; */
+}
+/* canvas{
+    filter: blur(10px) brightness(1.5);
+} */
+body{
+    font-size: 24px;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+main section{
+    background-color: var(--black);
+    color: var(--white);
+    max-width: 100%;
+    min-height: 0;
+}
+#intro{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    padding: 1rem;
+    flex-wrap: wrap;
+    /* background-color: var(--pink);
+    background: linear-gradient(90deg, var(--pink) 0%, var(--orange) 100%); */
+
+}
+#homeLink{
+    font-size: .8em;
+    color: var(--white);
+    display: block;
+    width: 100%;
+}
+#gallery{
+    background-color: rgba(0,0,0,0);
+}
+@media screen and (min-width: 1000px)
+{
+    body{
+        font-size: 18px;
+    }
+    #intro{
+        min-height: 90vh;
+        font-size: 1em;
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    #intro .description{
+        max-width: 30%;
+    }
+    #secImg{
+        height: 100vh;
+        width: 100%;
+        padding: 0rem;
+        background-color: rgba(0,0,0,0);
+        border: solid 1rem var(--black);
+        border-top: 0;
+    }
+    #secImg .imgHolder{
+        width: 80%;
+        height: 100%;
+        border-right: solid 1rem var(--black);
+    }
+    #secImg img{
+        height: 100%;
+        object-fit: cover;
+    }
+    #gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border: solid 1rem var(--black);
+        border-top: 0;
+        border-bottom: 0;
+    }
+    #gallery>*{
+        height: 100%;
+        width: 100%;
+        border-bottom: solid 1rem var(--black);
+    }
+    #gallery>*:nth-child(odd){
+        border-right: solid 0.5rem var(--black);
+    }
+    #gallery>*:nth-child(even){
+        border-left: solid 0.5rem var(--black);
+    }
+    .gap{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
