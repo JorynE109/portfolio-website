@@ -10,9 +10,10 @@ curCat = -1; //this is the value for all.
 let allImageRatios = {
     "1.1":0,
     "3.2":1,
-    "3.4": 2
+    "3.4": 2,
+    "12.1": 3,
 }
-let imageRatioCount = [0, 0, 0];
+let imageRatioCount = [0, 0, 0, 0];
 window.addEventListener('load',()=>{
     fetchItems();
 });
@@ -121,9 +122,24 @@ function sortItems(a_toSort)
     */
     //TODO: FIRST SORT BY DATE BEFORE DOING ALL THIS!!
     a_toSort = sortObjArrByDate(a_toSort);
+    // let latestTime = (new Date(a_toSort[0].date)).getTime();
+    // console.log(latestTime)
     while (a_toSort.length > 0)
     {
-        if (imageRatioCount[allImageRatios[3.4]] >= 1 && imageRatioCount[allImageRatios[3.2]] >= 2)
+        /*
+        if (imageRatioCount[allImageRatios[12.1]] >= 1 && new Date(a_toSort[a_toSort.map(p => p.ratio).indexOf(12.1), 1].date).getTime() <= latestTime) //ISSUE: THis will make 12x1 imgs always at the top
+        {
+            console.log("One 12x1 found")
+            a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(12.1), 1)[0]);
+            tmpItem = a_toSort.shift()
+            tmpItem["grid-col"] = 12;
+            tmpItem["grid-row"] = 1;
+            a_sorted.push(tmpItem)
+            imageRatioCount[allImageRatios[12.1]]--;
+            latestTime = (new Date(a_toSort[0].date)).getTime();
+        }
+        else if (imageRatioCount[allImageRatios[3.4]] >= 1 && imageRatioCount[allImageRatios[3.2]] >= 2)
+        // if (imageRatioCount[allImageRatios[3.4]] >= 1 && imageRatioCount[allImageRatios[3.2]] >= 2)
         {
             let tmpItem;
             a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
@@ -213,6 +229,20 @@ function sortItems(a_toSort)
             a_sorted.push(tmpItem)
             imageRatioCount[allImageRatios[3.2]]--;
         }
+        else if (imageRatioCount[allImageRatios[3.2]] >= 2)
+        {
+            let tmpItem;
+            console.log("2 landscape available")
+            for (let i = 0; i < 2; i++)
+            {
+                a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 6;
+                tmpItem["grid-row"] = 1;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[3.2]]--;
+            }
+        }
         else
         {
             //THIS MAY CAUSE ISSUES!! Need to make sure i correctly remove count from imageRatioCount
@@ -224,6 +254,61 @@ function sortItems(a_toSort)
                 a_sorted.push(item);
             })
         }
+        */
+       let currRatio = a_toSort[0].ratio;
+       console.log("Looking at an image with the ratio: " + currRatio)
+       if (currRatio == 12.1)
+       {
+            console.log("One 12x1 found")
+            let tmpItem;
+            // a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(12.1), 1)[0]);
+            tmpItem = a_toSort.shift()
+            tmpItem["grid-col"] = 12;
+            tmpItem["grid-row"] = 1;
+            a_sorted.push(tmpItem)
+            imageRatioCount[allImageRatios[12.1]]--;
+            currRatio = a_toSort[0].ratio;
+       }
+       else if (currRatio == 3.2)
+       {
+            console.log("One landscape found. Performing next actions")
+            if (a_toSort[1])
+            {
+                console.log("Next image ratio is: " + a_toSort[1].ratio);
+                if(a_toSort[1].ratio == 3.2)
+                {
+                    let tmpItem;
+                    console.log("2 landscape available")
+                    for (let i = 0; i < 2; i++)
+                    {
+                        // a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                        tmpItem = a_toSort.shift();
+                        tmpItem["grid-col"] = 6;
+                        tmpItem["grid-row"] = 1;
+                        a_sorted.push(tmpItem)
+                        imageRatioCount[allImageRatios[3.2]]--;
+                    }
+                }
+            }
+            //TODO::::ADD MORE POSSIBLE RATIOS!!
+            else
+            {
+                // tmpItem = a_toSort[0];
+                imageRatioCount[allImageRatios[currRatio]]--
+                console.log(imageRatioCount);
+                a_sorted.push(a_toSort.shift());
+            }
+       }
+       else
+       {
+            a_toSort.forEach(item => {
+                console.log(imageRatioCount)
+                imageRatioCount[allImageRatios[item.ratio]]--
+                console.log(imageRatioCount)
+                a_toSort.shift();
+                a_sorted.push(item);
+            })
+       }
     }
     return a_sorted;
 }

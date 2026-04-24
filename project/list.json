@@ -53,6 +53,24 @@
     "web":
     [
         {
+            "title": "Off-Bank Website",
+            "mainSrc": "./img/project/off-bank/main.png",
+            "coverSrc": "./img/project/off-bank/cover.png",
+            "alt": "Homepage for off-bank website",
+            "desc": "This is an ongoing project I have developed with two other Carleton students. It is an Ottawa-based alternative music blog/events list.",
+            "path": "./project/off-bank/",
+            "resp": ["Javascript", "Project Management"],
+            "ratio": 12.1,
+            "cat": "web",
+            "date": "2026-4-23",
+            "grid-col": 12,
+            "grid-row": 1,
+            "feature": 1
+        }
+    ],
+    "demos":
+    [
+        {
             "title": "web Proj Demo",
             "mainSrc": "./img/project/demos/1x1.jpg",
             "coverSrc": "./img/project/demos/1x1.jpg",
@@ -61,26 +79,11 @@
             "path": "./project/demo/",
             "resp": ["N/A"],
             "ratio": 1.1,
-            "cat": "web",
+            "cat": "demo",
             "date": "2026-1-4",
             "grid-col": 12,
             "grid-row": 1,
             "feature": 0
-        },
-        {
-            "title": "Off-Bank Website",
-            "mainSrc": "./img/project/off-bank/main.png",
-            "coverSrc": "./img/project/off-bank/cover.png",
-            "alt": "Homepage for off-bank website",
-            "desc": "This is an ongoing project I have developed with two other Carleton students. It is an Ottawa-based alternative music blog/events list.",
-            "path": "./project/off-bank/",
-            "resp": ["Javascript", "Project Management"],
-            "ratio": 3.4,
-            "cat": "web",
-            "date": "2026-4-23",
-            "grid-col": 12,
-            "grid-row": 1,
-            "feature": 1
         },
         {
             "title": "web Proj Demo 2",
@@ -91,7 +94,7 @@
             "path": "./project/demo/",
             "resp": ["N/A"],
             "ratio": 3.2,
-            "cat": "web",
+            "cat": "demo",
             "date": "2026-1-6",
             "grid-col": 12,
             "grid-row": 1,
