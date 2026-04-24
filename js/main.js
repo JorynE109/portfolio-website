@@ -32,8 +32,8 @@ function topFunction()
 {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  console.log(document.URL)
-  console.log(document.URL.split("#"))
+//   console.log(document.URL)
+//   console.log(document.URL.split("#"))
   let docURL = document.URL.split("#")
   if (docURL.length > 1)
   {
@@ -45,7 +45,7 @@ function setScrollSettings()
 {
     if (scroll >= heroHeight + projectsHeight + (aboutHeight/1.3))
     {
-        console.log("Contact")
+        // console.log("Contact")
         $topBtn.style.color = 'var(--black)';
         if (scroll >= heroHeight + projectsHeight + (aboutHeight - 50))
         {
@@ -59,19 +59,19 @@ function setScrollSettings()
     }
     else if (scroll >= heroHeight + projectsHeight)
     {
-        console.log("About")
+        // console.log("About")
         $topBtn.style.color = 'var(--white)';
         $footFix.classList.remove('show');
     }
     else if (scroll >= heroHeight)
     {
-        console.log("Projects")
+        // console.log("Projects")
         $topBtn.style.color = 'var(--white)';
         $footFix.classList.remove('show');
     }
     else
     {
-        console.log("Hero")
+        // console.log("Hero")
         $topBtn.style.color = 'var(--black)';
         $footFix.classList.remove('show');
     }

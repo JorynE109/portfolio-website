@@ -6,7 +6,18 @@
   --purple: #8215a8;
   --yellow: rgb(246, 218, 8);
   --blue: rgb(8, 60, 246);
-  --trans: rgba(0,0,0,0)
+  --trans: rgba(0,0,0,0);
+  --luc: #00000033;
+  --luc-dark: #0000009a;
+
+  --bg: var(--white);
+  --text: var(--black);
+  --img-bg: var(--trans);
+}
+:root[data-theme= "dark"] {
+  --bg: var(--black);
+  --text: var(--white);
+  --img-bg: var(--white);
 }
 * {
   margin: 0;
@@ -19,7 +30,7 @@ html {
 body {
   font-family: sans-serif;
   font-size: 24px;
-  color: light-dark(var(--black), var(--white));
+  color: var(--text);
 }
 /* header{
   width: 100vw;
@@ -50,14 +61,26 @@ body {
 /* #settings:not(.open) a{
   display: none;
 } */
-#settings a{
+#settingsHidden{
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+}
+#settings a, #settings button:not(#settingsBtn){
   display: inline-block;
   color: var(--white);
   font-size: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   text-wrap: nowrap;
+  text-decoration: none;
+  background-color: var(--luc-dark);
+  border-radius: 0.5rem;
+  border: none;
+  margin: 0;
+  cursor: pointer;
 }
 #settingsBtn{
+  cursor: pointer;
   font-size: 1.5em;
   padding: 1rem;
   aspect-ratio: 1;
@@ -65,8 +88,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--bg);
+  color: var(--text);
   border-radius: 1rem;
   border: none;
 }
@@ -79,7 +102,7 @@ body {
   aspect-ratio: 1;
 }
 .heading {
-  color: var(--white);
+  color: var(--bg);
   padding: 2rem;
   white-space: nowrap;
   pointer-events: none;
@@ -110,7 +133,7 @@ canvas{
   color: var(--white);
 }
 .glass{
-  background-color: #00000033;
+  background-color: var(--luc);
   backdrop-filter: blur(10px);
   color: var(--white);
   padding: 2rem;
@@ -152,7 +175,7 @@ canvas{
 main section{
   width: 100vw;
   min-height: 110vh;
-  background-color: light-dark(var(--white), var(--black));
+  background-color: var(--bg);
   padding: 3rem 0.5rem;
   font-size: 24px;
   line-height: 1.5;
@@ -199,8 +222,8 @@ main section p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: light-dark(var(--white), var(--black));
-  color: light-dark(var(--black), var(--white));
+  background-color: var(--bg);
+  color: var(--text);
   padding: 2rem;
   border-radius: 1rem;
   gap: 1rem;
@@ -210,11 +233,11 @@ main section p{
   width: 60%;
   max-width: 250px;
   border-radius: 100%;
-  background-color: light-dark(var(--trans), var(--white));
-  border: light-dark(var(--trans), var(--white)) solid 0.5rem;
+  background-color: var(--img-bg);
+  border: var(--img-bg) solid 0.5rem;
 }
 #about ul li a{
-  color: light-dark(var(--black), var(--white));
+  color: var(--text);
 }
 #about ul li h4{
   text-align: center;
