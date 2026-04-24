@@ -1,11 +1,13 @@
 const title = document.querySelector('title');
 let titleText = title.dataset["title"].split('');
+const fav = document.getElementById('favicon');
+let favFrame = 0;
 window.addEventListener("load", () => {
     titleText.push(" ");
-    startTimer();
+    startTitleTimer();
 })
 window.addEventListener("unload", () => {
-    stopTimer();
+    stopTitleTimer();
 })
 function setTitleText()
 {
@@ -13,27 +15,44 @@ function setTitleText()
     {
         requestAnimationFrame(titleIterate);
         title.innerText = titleText.join("");
+        fav.setAttribute("href", "./img/icons/favicon.ico")
+        fav.setAttribute("type", "image/x-icon")
     }
     else
     {
+        fav.setAttribute("type", "image/gif")
         title.innerText = "Come back :(";
+        requestAnimationFrame(animateFavicon)
     }
 }
 function titleIterate()
 {
     if (titleText[0] == title.dataset["title"].split('')[0])
     {
-        stopTimer();
-        setTimeout(startTimer, 1000);
+        stopTitleTimer();
+        setTimeout(startTitleTimer, 1000);
     }
     let letter = titleText.shift();
     titleText.push(letter);
 }
-function startTimer() {
-    timer = setInterval(function (){
+function startTitleTimer() {
+    titleTimer = setInterval(function (){
         requestAnimationFrame(setTitleText);
     }, 50);
 }
-function stopTimer() {
-    clearInterval(timer);
+function stopTitleTimer() {
+    clearInterval(titleTimer);
+}
+function animateFavicon() 
+{
+    if (favFrame < 60)
+    {
+        fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
+        favFrame++;
+    }
+    else
+    {
+        favFrame = 0;
+        fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
+    }
 }
