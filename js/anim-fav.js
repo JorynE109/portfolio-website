@@ -13,10 +13,10 @@ function setTitleText()
 {
     if (document.hasFocus())
     {
+        fav.setAttribute("href", "./img/icons/favicon.ico") 
+        fav.setAttribute("type", "image/x-icon")
         requestAnimationFrame(titleIterate);
         title.innerText = titleText.join("");
-        fav.setAttribute("href", "./img/icons/favicon.ico")
-        fav.setAttribute("type", "image/x-icon")
     }
     else
     {

@@ -11,7 +11,7 @@ let allImageRatios = {
     "1.1":0,
     "3.2":1,
     "3.4": 2,
-    "12.1": 3,
+    "12.1": 3
 }
 let imageRatioCount = [0, 0, 0, 0];
 window.addEventListener('load',()=>{
@@ -125,7 +125,9 @@ function sortItems(a_toSort)
     // let latestTime = (new Date(a_toSort[0].date)).getTime();
     // console.log(latestTime)
     while (a_toSort.length > 0)
+    //for (let i = 0; i < 7; i++)
     {
+        console.log(a_toSort)
         /*
         if (imageRatioCount[allImageRatios[12.1]] >= 1 && new Date(a_toSort[a_toSort.map(p => p.ratio).indexOf(12.1), 1].date).getTime() <= latestTime) //ISSUE: THis will make 12x1 imgs always at the top
         {
@@ -256,6 +258,7 @@ function sortItems(a_toSort)
         }
         */
        let currRatio = a_toSort[0].ratio;
+       console.log("Considering the object: ", a_toSort[0]);
        console.log("Looking at an image with the ratio: " + currRatio)
        if (currRatio == 12.1)
        {
@@ -269,36 +272,266 @@ function sortItems(a_toSort)
             imageRatioCount[allImageRatios[12.1]]--;
             currRatio = a_toSort[0].ratio;
        }
-       else if (currRatio == 3.2)
+    //    else if (a_toSort.length == 2)
+    //    {
+    //         console.log("Sorting length is 2")
+    //         if(a_toSort[0].ratio + a_toSort[1].ratio < (3.3 + 3.2) && a_toSort[0].ratio + a_toSort[1].ratio > (3.1 + 3.2))
+    //         {
+    //             console.log("Two landscapes found")
+    //             let tmpItem;
+
+    //             a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+    //             tmpItem = a_toSort.shift()
+    //             tmpItem["grid-col"] = 6;
+    //             tmpItem["grid-row"] = 1;
+    //             a_sorted.push(tmpItem)
+    //             imageRatioCount[allImageRatios[3.2]]--;
+
+    //             a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+    //             tmpItem = a_toSort.shift()
+    //             tmpItem["grid-col"] = 6;
+    //             tmpItem["grid-row"] = 1;
+    //             a_sorted.push(tmpItem)
+    //             imageRatioCount[allImageRatios[3.2]]--;
+    //         }
+    //    }
+       else if (a_toSort.length >= 3)
        {
-            console.log("One landscape found. Performing next actions")
-            if (a_toSort[1])
+            console.log("Sorting is at least 3");
+            if (a_toSort[0].ratio + a_toSort[1].ratio < (3.3 + 3.2) && a_toSort[0].ratio + a_toSort[1].ratio > (3.1 + 3.2))
             {
-                console.log("Next image ratio is: " + a_toSort[1].ratio);
-                if(a_toSort[1].ratio == 3.2)
+                console.log("Two landscapes found")
+                console.log(a_toSort[0].ratio);
+                console.log(a_toSort[1].ratio);
+                let tmpItem;
+
+                a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 6;
+                tmpItem["grid-row"] = 1;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[3.2]]--;
+
+                a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 6;
+                tmpItem["grid-row"] = 1;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[3.2]]--;
+            }
+            else if (a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio < (3.5 + 3.2 + 3.2) && a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio > (3.3 + 3.2 + 3.2))
+            {
+                console.log("2 landscape, 1 portrait found");
+                if (a_toSort[0].ratio == 3.2)
                 {
                     let tmpItem;
-                    console.log("2 landscape available")
-                    for (let i = 0; i < 2; i++)
-                    {
-                        // a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
-                        tmpItem = a_toSort.shift();
-                        tmpItem["grid-col"] = 6;
-                        tmpItem["grid-row"] = 1;
-                        a_sorted.push(tmpItem)
-                        imageRatioCount[allImageRatios[3.2]]--;
-                    }
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 6;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.4), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 6;
+                    tmpItem["grid-row"] = 2;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.4]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 6;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+                }
+                else 
+                {
+                    let tmpItem;
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.4), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 6;
+                    tmpItem["grid-row"] = 2;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.4]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 6;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+                    
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 6;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
                 }
             }
-            //TODO::::ADD MORE POSSIBLE RATIOS!!
+            else if (a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio < (1.2 + 3.2 + 3.2) && a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio > (1.0 + 3.2 + 3.2))
+            {
+                let tmpItem;
+                console.log("1 square, 2 landscape available")
+                if (a_toSort[0] == 1.1)
+                {
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(1.1), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 7;
+                    tmpItem["grid-row"] = 2;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[1.1]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 5;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 5;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+                }
+                else
+                {
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 5;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(1.1), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 7;
+                    tmpItem["grid-row"] = 2;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[1.1]]--;
+
+                    a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+                    tmpItem = a_toSort.shift()
+                    tmpItem["grid-col"] = 5;
+                    tmpItem["grid-row"] = 1;
+                    a_sorted.push(tmpItem)
+                    imageRatioCount[allImageRatios[3.2]]--;
+                }
+            }
+            else if (a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio < (1.2 + 1.1 + 1.1) && a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio > (1.0 + 1.1 + 1.1))
+            {
+                console.log("Three squares found")
+                let tmpItem;
+                a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(1.1), 1)[0]);
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 8;
+                tmpItem["grid-row"] = 2;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[1.1]]--;
+
+                a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(1.1), 1)[0]);
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 4;
+                tmpItem["grid-row"] = 1;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[1.1]]--;
+                
+                a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(1.1), 1)[0]);
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 4;
+                tmpItem["grid-row"] = 1;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[1.1]]--;
+
+            }
             else
             {
-                // tmpItem = a_toSort[0];
-                imageRatioCount[allImageRatios[currRatio]]--
-                console.log(imageRatioCount);
-                a_sorted.push(a_toSort.shift());
+                console.log(a_toSort[0]);
+                console.log(a_toSort[1]);
+                console.log(a_toSort[2]);
+                console.log(a_toSort[0].ratio);
+                console.log(a_toSort[1].ratio);
+                console.log(a_toSort[2].ratio);
+                console.log(a_toSort[0].ratio + a_toSort[1].ratio + a_toSort[2].ratio)
+                console.log(1.1+3.2+3.2)
+                
+                let tmpItem;
+                tmpItem = a_toSort.shift()
+                tmpItem["grid-col"] = 12;
+                tmpItem["grid-row"] = 1;
+                a_sorted.push(tmpItem)
+                imageRatioCount[allImageRatios[tmpItem.ratio]]--;
             }
        }
+       
+    //    else if (currRatio == 3.2)
+    //    {
+    //         console.log("One landscape found. Performing next actions")
+    //         if (a_toSort[1])
+    //         {
+    //             console.log("Next image ratio is: " + a_toSort[1].ratio);
+    //             if(a_toSort[1].ratio == 3.2)
+    //             {
+    //                 console.log("2 landscape available")
+    //                 if (a_toSort[2])
+    //                 {
+    //                     if (a_toSort[2].ratio == 3.4)
+    //                     {
+    //                         console.log("Plus a portrait")
+    //                         let tmpItem = a_toSort.shift()
+    //                         console.log("Sending to array: " + tmpItem)
+    //                         tmpItem["grid-col"] = 6;
+    //                         tmpItem["grid-row"] = 1;
+    //                         a_sorted.push(tmpItem)
+    //                         imageRatioCount[allImageRatios[3.2]]--;
+                            
+                            
+    //                         tmpItem = a_toSort[1]
+    //                         console.log("Sending to array: " + tmpItem)
+    //                         tmpItem["grid-col"] = 6;
+    //                         tmpItem["grid-row"] = 2;
+    //                         a_sorted.push(tmpItem)
+    //                         imageRatioCount[allImageRatios[3.4]]--;
+
+                            
+    //                         tmpItem = a_toSort.shift()
+    //                         tmpItem["grid-col"] = 6;
+    //                         tmpItem["grid-row"] = 1;
+    //                         a_sorted.push(tmpItem)
+    //                         imageRatioCount[allImageRatios[3.2]]--;
+
+    //                         a_toSort.shift()
+    //                     }
+    //                 }
+    //                 let tmpItem;
+    //                 for (let i = 0; i < 2; i++)
+    //                 {
+    //                     // a_toSort.unshift(a_toSort.splice(a_toSort.map(p => p.ratio).indexOf(3.2), 1)[0]);
+    //                     tmpItem = a_toSort.shift();
+    //                     tmpItem["grid-col"] = 6;
+    //                     tmpItem["grid-row"] = 1;
+    //                     a_sorted.push(tmpItem)
+    //                     imageRatioCount[allImageRatios[3.2]]--;
+    //                 }
+    //             }
+    //         }
+    //         //TODO::::ADD MORE POSSIBLE RATIOS!!
+
+    //         // if (imageRatioCount[allImageRatios[3.4]] >= 1 && imageRatioCount[allImageRatios[3.2]] >= 2)
+            
+
+    //         else
+    //         {
+    //             // tmpItem = a_toSort[0];
+    //             imageRatioCount[allImageRatios[currRatio]]--
+    //             console.log(imageRatioCount);
+    //             a_sorted.push(a_toSort.shift());
+    //         }
+    //    }
        else
        {
             a_toSort.forEach(item => {

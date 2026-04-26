@@ -38,7 +38,7 @@ $modeToggle.addEventListener("click", () => {
         document.documentElement.setAttribute("data-theme", "dark")
         $modeToggle.innerText = "Light";
         darkTheme = 1;
-        localStorage.setItem("joryn-theme", "dark");
+        localStorage.setItem("joryn-theme", "dark"); 
     }
 })
 window.addEventListener("load", ()=>{
