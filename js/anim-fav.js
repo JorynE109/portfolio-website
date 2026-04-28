@@ -1,6 +1,12 @@
 const title = document.querySelector('title');
 let titleText = title.dataset["title"].split('');
 const fav = document.getElementById('favicon');
+let favMainHref = "./img/icons/favicon.ico";
+if (window.location.href.split("/").length > 5)
+{
+    favMainHref = "../../img/icons/favicon.ico"
+}
+console.log(favMainHref)
 let favFrame = 0;
 window.addEventListener("load", () => {
     titleText.push(" ");
@@ -13,7 +19,7 @@ function setTitleText()
 {
     if (document.hasFocus())
     {
-        fav.setAttribute("href", "./img/icons/favicon.ico") 
+        fav.setAttribute("href", favMainHref) 
         fav.setAttribute("type", "image/x-icon")
         requestAnimationFrame(titleIterate);
         title.innerText = titleText.join("");
@@ -47,12 +53,28 @@ function animateFavicon()
 {
     if (favFrame < 60)
     {
-        fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
-        favFrame++;
+        if (window.location.href.split("/").length < 5)
+        {
+            fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
+            favFrame++;
+        }
+        else
+        {
+            fav.href = `../../img/icons/sad-emoji-split/frame_${favFrame}.gif`
+            favFrame++;
+        }
     }
     else
     {
-        favFrame = 0;
-        fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
+        if (window.location.href.split("/").length < 5)
+        {
+            favFrame = 0;
+            fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
+        }
+        else
+        {
+            favFrame = 0;
+            fav.href = `../../img/icons/sad-emoji-split/frame_${favFrame}.gif`
+        }
     }
 }
