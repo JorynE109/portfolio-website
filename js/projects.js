@@ -588,16 +588,49 @@ function projHTML(sortedItems)
         {
             $coverSrc = item.coverSrcLight
         }
+
         galleryHTML.push(`
         <div class="proj grid-col-${item["grid-col"]} grid-row-${item["grid-row"]}">
-            <a href="${item.path}" target"_self"><img src="${item.mainSrc}" alt="${item.alt}">
-            <img class="cover-image" src="${$coverSrc}" alt="${item.alt}">
-            <div class="projTxt">
-                <h4>${item.title}</h4>
-                <p class="category">${item.cat}</p>
-                <div class="resp">${getResp(item.resp)}</div>
-                <p class="description">${getDesc(item.desc)}</p>
-            </div></a>
+            <a href="${item.path}" target"_self">
+                <img
+                    srcset="
+                        ${item.mainSrc}main-160.jpg 160w, 
+                        ${item.mainSrc}main-320.jpg 320w,
+                        ${item.mainSrc}main-640.jpg 640w,
+                        ${item.mainSrc}main-1024.jpg 1024w"
+                        ${item.mainSrc}main.jpg 2048w"
+                    sizes="
+                        (max-width: 160px) 160px,
+                        (max-width: 320px) 320px,
+                        (max-width: 640px) 640px,
+                        (max-width: 1024px) 1024px,
+                        2048px,"
+                    src="${item.mainSrc}main.jpg"
+                    alt="${item.alt}"
+                />
+                <img class="cover-image"
+                    srcset="
+                        ${$coverSrc}main-160.jpg 160w, 
+                        ${$coverSrc}main-320.jpg 320w,
+                        ${$coverSrc}main-640.jpg 640w,
+                        ${$coverSrc}main-1024.jpg 1024w"
+                        ${$coverSrc}main.jpg 2048w"
+                    sizes="
+                        (max-width: 160px) 160px,
+                        (max-width: 320px) 320px,
+                        (max-width: 640px) 640px,
+                        (max-width: 1024px) 1024px,
+                        2048px,"
+                    src="${$coverSrc}main.jpg"
+                    alt="${item.alt}"
+                />
+                <div class="projTxt">
+                    <h4>${item.title}</h4>
+                    <p class="category">${item.cat}</p>
+                    <div class="resp">${getResp(item.resp)}</div>
+                    <p class="description">${getDesc(item.desc)}</p>
+                </div>
+            </a>
         </div>
         `)
     })

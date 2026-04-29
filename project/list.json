@@ -3,7 +3,7 @@
     [
         {
             "title": "Synesthesia",
-            "mainSrc": "./img/project/synesthesia/main.png",
+            "mainSrc": "./img/project/synesthesia/main/",
             "coverSrcLight": "./img/project/synesthesia/cover-light.png",
             "coverSrcDark": "./img/project/synesthesia/cover.png",
             "alt": "person looking left with shadow image faintly showing above",
@@ -19,7 +19,7 @@
         },
         {
             "title": "Capital",
-            "mainSrc": "./img/project/capital/main.jpg",
+            "mainSrc": "./img/project/capital/main/",
             "coverSrcLight": "./img/project/capital/cover-light.png",
             "coverSrcDark": "./img/project/capital/cover.png",
             "alt": "stairs going up in an underpast",
@@ -38,7 +38,7 @@
     [
         {
             "title": "The Climb",
-            "mainSrc": "./img/project/the-climb/main.png",
+            "mainSrc": "./img/project/the-climb/main/",
             "coverSrcLight": "./img/project/the-climb/cover-light.png",
             "coverSrcDark": "./img/project/the-climb/cover.png",
             "alt": "person on a sunny day looking up and to the right",
@@ -57,9 +57,9 @@
     [
         {
             "title": "Off-Bank Website",
-            "mainSrc": "./img/project/off-bank/main.png",
-            "coverSrcLight": "./img/project/off-bank/cover-light.png",
-            "coverSrcDark": "./img/project/off-bank/cover.png",
+            "mainSrc": "./img/project/off-bank/main/",
+            "coverSrcLight": "./img/project/off-bank/cover-light/",
+            "coverSrcDark": "./img/project/off-bank/cover-dark/",
             "alt": "Homepage for off-bank website",
             "desc": "This is an ongoing project I have developed with two other Carleton students. It is an Ottawa-based alternative music blog/events list.",
             "path": "./project/off-bank/",
