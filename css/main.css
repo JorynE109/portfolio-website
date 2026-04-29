@@ -10,15 +10,40 @@
   --trans: rgba(0,0,0,0);
   --luc: #00000033;
   --luc-dark: #0000009a;
+  --luc-light: #f6f2f272;
+  --magenta-bright: #de91f5;
 
   --bg: var(--white);
   --text: var(--black);
   --img-bg: var(--trans);
+
+  --catBtn-bg: var(--purple);
+  --catBtn-txt: var(--white);
+  --catBtn-border: var(--purple);
+  --catBtnAct-bg: var(--magenta);
+  --catBtnAct-txt: var(--white);
+  --catBtn-border-top: none;
+  --catBtn-box-shadow-inset: inset 8px 8px 15px 5px var(--luc-light);
+  --catBtn-box-shadow-act-inset: inset 8px 8px 15px 5px var(--luc-light);
+  --catBtn-box-shadow-outer: 0px 0px 9px 7px var(--magenta-bright);
+  --catBtnAct-border: solid 4px var(--luc-light);
 }
 :root[data-theme= "dark"] {
   --bg: var(--black);
   --text: var(--white);
   --img-bg: var(--white);
+
+  --catBtn-bg: var(--trans);
+  --catBtn-txt: var(--magenta);
+  --catBtn-border: var(--magenta);
+  --catBtnAct-bg: var(--magenta);
+  --catBtnAct-txt: var(--white);
+  --catBtn-border-top: none;
+
+  --catBtn-box-shadow-act-inset: inset 0px 10px 10px -5px var(--luc-light);
+  --catBtn-box-shadow-inset: inset 8px 10px 3px -5px var(--trans);
+  --catBtn-box-shadow-outer: 0px 0px 9px 7px var(--magenta);
+  --catBtnAct-border: solid 4px var(--magenta-bright);
 }
 * {
   margin: 0;
@@ -524,19 +549,26 @@ hr{
   min-width: 100px;
   text-transform: uppercase;
   font-weight: 800;
-  background-color: var(--trans);
+  background-color: var(--catBtn-bg);
   border: none;
   border-radius: 2rem;
-  border-bottom: solid 4px var(--magenta);
-  color: var(--magenta);
+  border-bottom: solid 4px var(--catBtn-border);
+  color: var(--catBtn-txt);
   transition: all 300ms ease;
+  border-top: var(--catBtn-border-top);
+  -webkit-box-shadow: var(--catBtn-box-shadow-inset); 
+  box-shadow: var(--catBtn-box-shadow-inset);
+}
+.categorySelection:active{
+  border-bottom: none;
 }
 .categorySelection.active{
-  border: none;
-  background-color: var(--magenta);
-  color: var(--black);
-  -webkit-box-shadow: 0px 0px 9px 7px var(--magenta); 
-  box-shadow: 0px 0px 9px 7px var(--magenta);
+  border-bottom: var(--catBtnAct-border);
+  border-top: none;
+  background-color: var(--catBtnAct-bg);
+  color: var(--catBtnAct-txt);
+  -webkit-box-shadow: var(--catBtn-box-shadow-outer), var(--catBtn-box-shadow-act-inset); 
+  box-shadow: var(--catBtn-box-shadow-outer), var(--catBtn-box-shadow-act-inset);
 }
 #modalWrapper{
   position: fixed;
