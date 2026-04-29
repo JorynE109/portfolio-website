@@ -271,7 +271,6 @@ function sortItems(a_toSort)
             tmpItem["grid-row"] = 1;
             a_sorted.push(tmpItem)
             imageRatioCount[allImageRatios[12.1]]--;
-            currRatio = a_toSort[0].ratio;
        }
     //    else if (a_toSort.length == 2)
     //    {
