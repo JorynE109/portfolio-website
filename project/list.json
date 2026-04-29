@@ -4,7 +4,8 @@
         {
             "title": "Synesthesia",
             "mainSrc": "./img/project/synesthesia/main.png",
-            "coverSrc": "./img/project/synesthesia/cover.png",
+            "coverSrcLight": "./img/project/synesthesia/cover-light.png",
+            "coverSrcDark": "./img/project/synesthesia/cover.png",
             "alt": "person looking left with shadow image faintly showing above",
             "desc": "This is a description of the project.",
             "path": "./project/synesthesia/",
@@ -19,7 +20,8 @@
         {
             "title": "Capital",
             "mainSrc": "./img/project/capital/main.jpg",
-            "coverSrc": "./img/project/capital/cover.png",
+            "coverSrcLight": "./img/project/capital/cover-light.png",
+            "coverSrcDark": "./img/project/capital/cover.png",
             "alt": "stairs going up in an underpast",
             "desc": "This is a description of the project.",
             "path": "./project/capital/",
@@ -37,7 +39,8 @@
         {
             "title": "The Climb",
             "mainSrc": "./img/project/the-climb/main.png",
-            "coverSrc": "./img/project/the-climb/cover.png",
+            "coverSrcLight": "./img/project/the-climb/cover-light.png",
+            "coverSrcDark": "./img/project/the-climb/cover.png",
             "alt": "person on a sunny day looking up and to the right",
             "desc": "This is a description of the project.",
             "path": "./project/the-climb/",
@@ -55,7 +58,8 @@
         {
             "title": "Off-Bank Website",
             "mainSrc": "./img/project/off-bank/main.png",
-            "coverSrc": "./img/project/off-bank/cover.png",
+            "coverSrcLight": "./img/project/off-bank/cover-light.png",
+            "coverSrcDark": "./img/project/off-bank/cover.png",
             "alt": "Homepage for off-bank website",
             "desc": "This is an ongoing project I have developed with two other Carleton students. It is an Ottawa-based alternative music blog/events list.",
             "path": "./project/off-bank/",
@@ -73,7 +77,7 @@
         {
             "title": "web Proj Demo",
             "mainSrc": "./img/project/demos/1x1.jpg",
-            "coverSrc": "./img/project/demos/1x1.jpg",
+            "coverSrcDark": "./img/project/demos/1x1.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -88,7 +92,7 @@
         {
             "title": "web Proj Demo 2",
             "mainSrc": "./img/project/demos/3x2.jpg",
-            "coverSrc": "./img/project/demos/3x2.jpg",
+            "coverSrcDark": "./img/project/demos/3x2.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -103,7 +107,7 @@
         {
             "title": "web Proj Demo 2",
             "mainSrc": "./img/project/demos/3x4.jpg",
-            "coverSrc": "./img/project/demos/3x4.jpg",
+            "coverSrcDark": "./img/project/demos/3x4.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -118,7 +122,7 @@
         {
             "title": "web Proj Demo 2",
             "mainSrc": "./img/project/demos/3x2.jpg",
-            "coverSrc": "./img/project/demos/3x2.jpg",
+            "coverSrcDark": "./img/project/demos/3x2.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -133,7 +137,7 @@
         {
             "title": "web Proj Demo 2",
             "mainSrc": "./img/project/demos/3x2.jpg",
-            "coverSrc": "./img/project/demos/3x2.jpg",
+            "coverSrcDark": "./img/project/demos/3x2.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -148,7 +152,7 @@
         {
             "title": "web Proj Demo 2",
             "mainSrc": "./img/project/demos/3x2.jpg",
-            "coverSrc": "./img/project/demos/3x2.jpg",
+            "coverSrcDark": "./img/project/demos/3x2.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -163,7 +167,7 @@
         {
             "title": "web Proj Demo 2",
             "mainSrc": "./img/project/demos/3x2.jpg",
-            "coverSrc": "./img/project/demos/3x2.jpg",
+            "coverSrcDark": "./img/project/demos/3x2.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -178,7 +182,7 @@
         {
             "title": "web Proj Demo",
             "mainSrc": "./img/project/demos/1x1.jpg",
-            "coverSrc": "./img/project/demos/1x1.jpg",
+            "coverSrcDark": "./img/project/demos/1x1.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -193,7 +197,7 @@
         {
             "title": "web Proj Demo",
             "mainSrc": "./img/project/demos/1x1.jpg",
-            "coverSrc": "./img/project/demos/1x1.jpg",
+            "coverSrcDark": "./img/project/demos/1x1.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",
@@ -208,7 +212,7 @@
         {
             "title": "web Proj Demo",
             "mainSrc": "./img/project/demos/1x1.jpg",
-            "coverSrc": "./img/project/demos/1x1.jpg",
+            "coverSrcDark": "./img/project/demos/1x1.jpg",
             "alt": "test image 1x1 ratio",
             "desc": "This is a fairly lengthy description of the project which will, in all likelihood, be shortened for rendering.",
             "path": "./project/demo/",

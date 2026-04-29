@@ -33,6 +33,7 @@ $modeToggle.addEventListener("click", () => {
         console.log("Switching to dark mode")
         setDarkMode();
     }
+    updateGallery();
 })
 window.addEventListener("load", ()=>{
     $settings.style.width = $settingsBtn.offsetWidth + "px";

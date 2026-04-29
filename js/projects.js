@@ -43,6 +43,7 @@ function updateHighlight()
         })
     })
 
+
     let item = featItems[(new Date().getDate()) % featItems.length];
     $highlightDisp.innerHTML = `
         <h3>Featured Project</h3>
@@ -578,10 +579,20 @@ function projHTML(sortedItems)
 {
     let galleryHTML = [];
     sortedItems.forEach(item =>{
+        console.log(document.documentElement.getAttribute("data-theme"))
+        let $coverSrc;
+        if (document.documentElement.getAttribute("data-theme") == "dark")
+        {
+            $coverSrc = item.coverSrcDark;
+        }
+        else 
+        {
+            $coverSrc = item.coverSrcLight
+        }
         galleryHTML.push(`
         <div class="proj grid-col-${item["grid-col"]} grid-row-${item["grid-row"]}">
             <a href="${item.path}" target"_self"><img src="${item.mainSrc}" alt="${item.alt}">
-            <img class="cover-image" src="${item.coverSrc}" alt="${item.alt}">
+            <img class="cover-image" src="${$coverSrc}" alt="${item.alt}">
             <div class="projTxt">
                 <h4>${item.title}</h4>
                 <p class="category">${item.cat}</p>
@@ -667,5 +678,19 @@ function getResp(respArr)
 function catSelected(category)
 {
     curCat = category;
+    console.log("Checking button for category: " + category);
+    const $catBtns = document.querySelectorAll(".categorySelection");
+    console.log($catBtns)
+    $catBtns.forEach(btn => {
+        console.log("Current button is: " + btn.dataset['category'])
+        if (btn.dataset['category'] == category)
+        {
+            btn.classList.add("active");
+        }
+        else
+        {
+            btn.classList.remove("active");
+        }
+    });
     fetchItems();
 }
