@@ -1,12 +1,17 @@
 const title = document.querySelector('title');
 let titleText = title.dataset["title"].split('');
 const fav = document.getElementById('favicon');
-let favMainHref = "./img/icons/favicon.ico";
-if (window.location.href.split("/").length > 5)
+let favMainHref;
+if (window.location.href.split("/").length < 6)
+{
+    favMainHref = "./img/icons/favicon.ico"
+}
+else
 {
     favMainHref = "../../img/icons/favicon.ico"
 }
 console.log(favMainHref)
+console.log(window.location.href.split("/").length);
 let favFrame = 0;
 window.addEventListener("load", () => {
     titleText.push(" ");
@@ -53,7 +58,7 @@ function animateFavicon()
 {
     if (favFrame < 60)
     {
-        if (window.location.href.split("/").length < 5)
+        if (window.location.href.split("/").length < 6)
         {
             fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
             favFrame++;
@@ -66,7 +71,7 @@ function animateFavicon()
     }
     else
     {
-        if (window.location.href.split("/").length < 5)
+        if (window.location.href.split("/").length < 6)
         {
             favFrame = 0;
             fav.href = `./img/icons/sad-emoji-split/frame_${favFrame}.gif`
