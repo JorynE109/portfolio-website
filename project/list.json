@@ -39,8 +39,8 @@
         {
             "title": "The Climb",
             "mainSrc": "./img/project/the-climb/main/",
-            "coverSrcLight": "./img/project/the-climb/cover-light.png",
-            "coverSrcDark": "./img/project/the-climb/cover.png",
+            "coverSrcLight": "./img/project/the-climb/cover-light/",
+            "coverSrcDark": "./img/project/the-climb/cover-dark/",
             "alt": "person on a sunny day looking up and to the right",
             "desc": "This is a description of the project.",
             "path": "./project/the-climb/",
