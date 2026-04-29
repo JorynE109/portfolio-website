@@ -66,7 +66,7 @@ body {
   gap: 0.5rem;
   padding: 0 0.5rem;
 }
-#settings a, #settings button:not(#settingsBtn){
+#settings a:not(#settingsBtn), #settings button{
   display: inline-block;
   color: var(--white);
   font-size: 1rem;
@@ -92,15 +92,45 @@ body {
   color: var(--text);
   border-radius: 1rem;
   border: none;
-}
-#settings.open #settingsBtn img{
   width: fit-content;
-  height: fit-content;
+}
+#setico{
+  min-width: 25px;
+}
+#setico.opening{
+  animation: countRot 300ms ease;
+}
+#setico.open{
+  transform: rotate(calc(90deg + 45deg));
+}
+#setico.closing{
+  animation: clockRot 300ms ease;
+}
+@keyframes countRot {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(calc(90deg + 45deg));
+  }
+}
+@keyframes clockRot {
+  from{
+    transform: rotate(calc(90deg + 45deg));
+  }
+  to{
+    transform: rotate(0deg);
+  }
+}
+/* #settings.open #settingsBtn img{
   transform-origin: center;
   transition: transform 200ms ease-in-out;
-  transform: rotate(405deg);
+  transform: rotate(45deg);
   aspect-ratio: 1;
 }
+#settings:not(.open) #settingsBtn img{
+  transform: rotate(0deg);
+} */
 .heading {
   color: var(--bg);
   padding: 2rem;

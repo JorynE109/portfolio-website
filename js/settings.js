@@ -1,6 +1,7 @@
 const $settings = document.getElementById("settings");
 const $settingsBtn = document.getElementById("settingsBtn");
 const $modeToggle = document.getElementById("modeToggle");
+const $setico = document.getElementById("setico")
 let settingsOpen = 0;
 let startWidth;
 let goalWidth;
@@ -16,29 +17,21 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
     localStorage.setItem("joryn-theme", newColorScheme);
     if (event.matches)
     {
-        $modeToggle.innerText = "Dark";
-        darkTheme = 0;
+        setLightMode();
     }
     else
     {
-        $modeToggle.innerText = "Light";
-        darkTheme = 1;
+        setDarkMode();
     }
 });
 $modeToggle.addEventListener("click", () => {
     // document.documentElement.setAttribute("data-theme", "dark");
     if (darkTheme == 1) {
         console.log("Switching to light mode")
-        document.documentElement.setAttribute("data-theme", "light")
-        $modeToggle.innerText = "Dark";
-        darkTheme = 0;
-        localStorage.setItem("joryn-theme", "light");
+        setLightMode();
     } else {
         console.log("Switching to dark mode")
-        document.documentElement.setAttribute("data-theme", "dark")
-        $modeToggle.innerText = "Light";
-        darkTheme = 1;
-        localStorage.setItem("joryn-theme", "dark"); 
+        setDarkMode();
     }
 })
 window.addEventListener("load", ()=>{
@@ -48,17 +41,11 @@ window.addEventListener("load", ()=>{
     {
         if (localStorage.getItem("joryn-theme") == "dark") 
         {
-            document.documentElement.setAttribute("data-theme", "dark")
-            $modeToggle.innerText = "Light";
-            darkTheme = 1;
-            localStorage.setItem("joryn-theme", "dark");
+            setDarkMode();
         }
         else
         {
-            document.documentElement.setAttribute("data-theme", "light")
-            $modeToggle.innerText = "Dark";
-            darkTheme = 0;
-            localStorage.setItem("joryn-theme", "light");
+            setLightMode();
         }
 
     }
@@ -66,29 +53,33 @@ window.addEventListener("load", ()=>{
     {
         if (darkModeMql && darkModeMql.matches) 
         {
-            console.log("User prefers dark mode")
-            document.documentElement.setAttribute("data-theme", "dark")
-            $modeToggle.innerText = "Light";
-            darkTheme = 1;
+            setDarkMode();
         }
         else 
         {
-            console.log("User prefers light mode")
-            document.documentElement.setAttribute("data-theme", "light")
-            $modeToggle.innerText = "Dark";
-            darkTheme = 0;
+            setLightMode();
         }
     }
 })
 $settingsBtn.addEventListener("click", ()=>{
     if (settingsOpen == 0)
     {
+        $setico.classList.add("opening");
+        setTimeout(()=>{
+            $setico.classList.remove("opening")
+            $setico.classList.add("open")
+        }, 300)
         $settings.classList.add("open");
         settingsOpen = 1;
         updateSettingsWidth()
     }
     else
     {
+        $setico.classList.remove("open")
+        $setico.classList.add("closing");
+        setTimeout(()=>{
+            $setico.classList.remove("closing")
+        }, 300)
         $settings.classList.remove("open");
         settingsOpen = 0;
         updateSettingsWidth()
@@ -150,4 +141,20 @@ function setSettingsWidth()
         }
     }
     
+}
+function setDarkMode()
+{
+    document.documentElement.setAttribute("data-theme", "dark")
+    $modeToggle.innerText = "Light";
+    darkTheme = 1;
+    localStorage.setItem("joryn-theme", "dark");
+    $setico.src = "./img/icons/plus-w@4x.png"
+}
+function setLightMode()
+{
+    document.documentElement.setAttribute("data-theme", "light")
+    $modeToggle.innerText = "Dark";
+    darkTheme = 0;
+    localStorage.setItem("joryn-theme", "light");
+    $setico.src = "./img/icons/plus-b@4x.png"
 }

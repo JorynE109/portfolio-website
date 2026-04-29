@@ -9,15 +9,29 @@
     <link href="../../css/animate.css" rel="stylesheet">
     <link href="../../css/main.css" rel="stylesheet">
     <link href="../../css/project.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./img/icons/favicon.ico">
+    <link href="./off-bank.css" rel="stylesheet">
+  <link id="favicon" rel="icon" type="image/x-icon" href="../../img/icons/favicon.ico">
     <title data-title="Off-bank Project">Off-bank Project</title>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/hydra-synth/dist/hydra-synth.js"></script>
+    
     <script>
-            // create a new hydra-synth instance
-            var hydra = new Hydra({ detectAudio: false })
+    // create a new hydra-synth instance
+    async function newHydra()
+    {
+        var hydra = new Hydra({ detectAudio: false })
+        await loadScript("https://metagrowing.org/extra-shaders-for-hydra/lib-color.js")
 
+        osc(8, 0.1, 0.8)
+        .color(1.04,0, -1.1)
+        .rotate(() => Math.sin(0.08 * time), 0.1)
+        .modulate(noise(2.5), () => 1.5 * Math.sin(0.08 * time))
+        .grarose(1)
+        .hsvshift(0.1, 1, 2)
+        .out(o0)
+    }
+    newHydra();
     </script>
     <div id="wrapper">
         <header>
@@ -27,14 +41,38 @@
         </header>
         <main>
             <section id="intro">
-                <iframe src="https://joryne109.github.io/IMD1005_Final-Project_Off-Bank/" width="50%">
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-                    <br>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
-                </p>
+                <img src="../../img/project/off-bank/home.png" alt="off-bank homepage">
+                <div class="description">
+                    <h2>What is "Off-Bank"?</h2>
+                    <p>This is an ongoing project I have developed with two other Carleton students. It is an Ottawa-based alternative music blog/events list.</p>
+                </div>
             </section>
-            <section id="gallery">
+            <section id="roles">
+                <div id="rolesHeader">
+                    <h2>My Roles</h2>
+                    <sub>What I did in this project</sub>
+                </div>
+                <div id="jsDesc" class="role">
+                    <img src="../../img/project/off-bank/eventsCal.png" alt="Off-bank Events calendar">
+                    <div>
+                        <h3>1. JavaScript</h3>
+                        <p>My main role in this project was to write all the JavaScript. For this project, JS was very integral, as it handles all the event and article posts, ensuring the site has content to display. I developed a system for making all blog and event posts with simple JSON data, and inserting it dynamically into the HTML document. This way it is easy to add content and it is dynamically pushed to the main site. </p>
+                    </div>
+                </div>
+                <div id="projManDesc" class="role">
+                    <div>
+                        <h3>2. Project Setup and Management</h3>
+                        <p>EELEJJDjsdjfasdfa</p>
+                    </div>
+                    <img src="../../img/project/off-bank/posts.png" alt="off-bank posts page">
+                </div>
+                <div id="animDesc" class="role">
+                    <img src="../../img/project/off-bank/about.png" alt="">
+                    <div>
+                        <h3>3. Animations</h3>
+                        <p>This</p>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
