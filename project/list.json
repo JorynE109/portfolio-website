@@ -4,8 +4,8 @@
         {
             "title": "Synesthesia",
             "mainSrc": "./img/project/synesthesia/main/",
-            "coverSrcLight": "./img/project/synesthesia/cover-light.png",
-            "coverSrcDark": "./img/project/synesthesia/cover.png",
+            "coverSrcLight": "./img/project/synesthesia/cover-light/",
+            "coverSrcDark": "./img/project/synesthesia/cover-dark/",
             "alt": "person looking left with shadow image faintly showing above",
             "desc": "This is a description of the project.",
             "path": "./project/synesthesia/",
@@ -20,8 +20,8 @@
         {
             "title": "Capital",
             "mainSrc": "./img/project/capital/main/",
-            "coverSrcLight": "./img/project/capital/cover-light.png",
-            "coverSrcDark": "./img/project/capital/cover.png",
+            "coverSrcLight": "./img/project/capital/cover-light/",
+            "coverSrcDark": "./img/project/capital/cover-dark/",
             "alt": "stairs going up in an underpast",
             "desc": "This is a description of the project.",
             "path": "./project/capital/",
