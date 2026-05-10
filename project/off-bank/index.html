@@ -29,7 +29,7 @@
         .modulate(noise(2.5), () => 1.5 * Math.sin(0.008 * time))
         .grarose(1)
         .scale(2)
-        .hsvshift(0.1, 1, 2)
+        .hsvshift(0.12, 0.8, 2)
         .out(o0)
     }
     newHydra();
@@ -42,7 +42,8 @@
         </header>
         <main>
             <section id="intro">
-                <img src="../../img/project/off-bank/home.png" alt="off-bank homepage">
+                <img src="../../img/project/off-bank/main.png" alt="off-bank logo" id="mobileIntroImg">
+                <img src="../../img/project/off-bank/home.png" alt="off-bank homepage" id="desktopIntroImg">
                 <div class="description">
                     <h2>What is "Off-Bank"?</h2>
                     <p>This is an ongoing project I have developed with two other Carleton students. It is an Ottawa-based alternative music blog/events list.</p>
@@ -56,22 +57,22 @@
                 <div id="jsDesc" class="role">
                     <img src="../../img/project/off-bank/eventsCal.png" alt="Off-bank Events calendar">
                     <div>
-                        <h3>1. JavaScript</h3>
+                        <h3>JavaScript</h3>
                         <p>My main role in this project was to write all the JavaScript. For this project, JS was very integral, as it handles all the event and article posts, ensuring the site has content to display. I developed a system for making all blog and event posts with simple JSON data, and inserting it dynamically into the HTML document. This way it is easy to add content and it is dynamically pushed to the main site. </p>
                     </div>
                 </div>
                 <div id="projManDesc" class="role">
                     <div>
-                        <h3>2. Project Setup and Management</h3>
-                        <p>EELEJJDjsdjfasdfa</p>
+                        <h3>Project Setup and Management</h3>
+                        <p>In beginning this project, I took the initial lead in setting up the project and creating all the necessary infrastructure for the website. This involved document setup and template creation, CSS structure, and GIT/Github setup</p>
                     </div>
-                    <img src="../../img/project/off-bank/posts.png" alt="off-bank posts page">
+                    <!-- <img src="../../img/project/off-bank/posts.png" alt="off-bank posts page"> -->
                 </div>
                 <div id="animDesc" class="role">
-                    <img src="../../img/project/off-bank/about.png" alt="">
+                    <img src="../../img/project/off-bank/animation.gif" alt="off-bank navigation animation">
                     <div>
-                        <h3>3. Animations</h3>
-                        <p>This</p>
+                        <h3>Animations</h3>
+                        <p>In wanting to give this site greater visual appeal, I chose to add animations as well. I used a library called <a href="https://github.com/mamunhpath/josh.js" target="_blank">josh.js</a> to efficiently add js-enabled animations to elements. </p>
                     </div>
                 </div>
             </section>
